@@ -1,0 +1,60 @@
+%
+% Uni Dissertation/Thesis/Report
+% (c) gryffyn 2021
+%
+% License:
+% This template is licensed under CC BY-NC-SA-4.0
+%
+% ----------------------------------------------------
+% Metadata is stored in main.meta.tex
+% Package loading and options are in main.config.tex
+% ----------------------------------------------------
+
+% To adapt to letter, 
+\documentclass[oneside,headsepline,footsepline,
+               plainfootsepline,plainheadsepline,12pt,
+               a4paper, % for letter, use letterpaper instead of a4paper
+               listof=totoc,bibliography=totoc]{scrbook}
+
+\newif\ifUniLogoSVG
+
+% METADATA
+\input{main.meta}
+% CONFIG
+\input{main.config}
+
+\begin{document}
+    \import{frontbackmatter/00_title/}{title}
+
+    % START FRONTMATTER
+    \frontmatter{}
+
+    % ToC includes everything in mainmatter and appendix.
+    \tableofcontents{}
+
+    % START MAINMATTER
+    \mainmatter{}
+
+    % -------------------------------------------------------------------------
+    % They're called chapters here, but they're effectively just sections.
+    % Just make sure you use \chapter{} and not \section{} for the top level.
+    % -------------------------------------------------------------------------
+
+    % Chapter 1
+    \chapter{Chapter 1}
+    \import{chapters/01_chapter1/} % folder where chapter resides
+           {chap1} % chapter tex file without extension (ex. chap1.tex)
+
+    % START APPENDIX
+    % Despite being called the appendix, this is just a marker for everything
+    % after the main content. This does not generate any appendicies.
+    \appendix{}
+
+    % Lists of Tables and Figures
+    \listoffigures{}
+    \listoftables{}
+
+    % Prints bibliography with Harvard sorting
+    \newrefcontext[sorting=nyt]
+    \printbibliography[title=\metaBibliographyName,heading=bibintoc]{}
+\end{document}

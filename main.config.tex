@@ -1,0 +1,94 @@
+% !TeX root = main.tex
+
+% PACKAGAES
+\usepackage[verbose,tmargin=3.5cm,bmargin=3.5cm,lmargin=2.5cm,
+            rmargin=2.5cm,headheight=32pt]{geometry}
+%\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{svg}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{relsize}
+\usepackage[backend=biber, style=bath, sorting=ynt]{biblatex}
+\usepackage{import}
+\usepackage[hidelinks]{hyperref}
+\usepackage[final]{microtype}
+\usepackage[automark, autooneside=false]{scrlayer-scrpage}
+\usepackage{xcolor}
+\usepackage{fontspec}
+
+\usepackage{kantlipsum}
+
+% -------------------------------------
+% Uncomment to enable listings
+% Additionally uncomment options below
+% -------------------------------------
+%\usepackage{listings}
+%\usepackage{lstautogobble}
+
+% -------------------------
+% Uncomment to enable tikz
+% -------------------------
+%\usepackage{tikz}
+
+% -----------------------------
+% Uncomment to enable pgfplots
+% -----------------------------
+%\usepackage{pgfplots}
+
+% ----------------------------------
+% Uncomment to enable pfgplotstable
+% ----------------------------------
+%\usepackage{pgfplotstable}
+
+
+% OPTIONS
+\setkomafont{disposition}{\normalfont\bfseries}
+\BeforeTOCHead[toc]{{\cleardoublepage\pdfbookmark[0]{\contentsname}{toc}}}
+\assignrefcontextentries[]{*}
+\svgpath{{img/}}
+\addbibresource{main.bib}
+\author{\metaAuthor}
+\pagestyle{scrheadings}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{1em}
+\pagenumbering{alph}
+
+\clearpairofpagestyles
+\ihead*{\leftmark\hfill\metaAuthor}
+\ofoot*{\pagemark}
+\setkomafont{pageheadfoot}{\upshape}
+\setkomafont{pagehead}{\slshape}
+\setkomafont{headsepline}{\color{black}}
+\setkomafont{footsepline}{\color{black}}
+
+\setmonofont{SourceCodePro}[
+    Scale=MatchLowercase,
+    Path = ./font/,
+    Extension = .ttf,
+    UprightFont = *-Regular,
+    BoldFont = *-Bold,
+    ItalicFont = *-Italic,
+]
+\setmainfont{FiraSans}[
+    Scale=MatchLowercase,
+    Path = ./font/,
+    Extension = .ttf,
+    UprightFont = *-Book,
+    BoldFont = *-SemiBold,
+    ItalicFont = *-Italic,
+    BoldItalicFont = *-SemiBoldItalic,
+]
+
+% -----------------------------
+% Listing options
+% Uncomment to enable listings
+% -----------------------------
+% \lstset{%
+%   basicstyle=\ttfamily,
+%   columns=fullflexible,
+%   autogobble,
+% }
+
+% COMMANDS
+\newcommand{\fig}[1]{\textbf{Fig. \ref{#1}}}
