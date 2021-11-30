@@ -1,0 +1,11 @@
+**.svg
+**.png
+**.tex
+.gitignore
+README.md
+build.sh
+Makefile
+font/*.ttf
+font/*.otf
+font/OFT.txt
+LICENSE
