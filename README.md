@@ -1,5 +1,7 @@
 # Uni Dissertation/Thesis/Report Latex Template
 
+[![Build Status](https://ci.neveris.one/api/badges/gryffyn/uni-thesis-latex/status.svg?ref=refs/heads/main)](https://ci.neveris.one/gryffyn/uni-thesis-latex)
+
 A (relatively) simple template for marking up a dissertation, thesis, or report.
 
 **[Demo PDF](https://git.neveris.one/gryffyn/uni-thesis-latex/raw/branch/main/main.pdf)**

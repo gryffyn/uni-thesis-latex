@@ -1,0 +1,37 @@
+kind: pipeline
+name: default
+type: docker
+
+workspace:
+  path: /work/src
+
+clone:
+  depth: 1
+
+steps:
+  - name: build
+    image: gryffyn/texlive-xetex:latest
+    # pull: never
+    volumes:
+    - name: cache
+      path: /work/out
+    commands:
+      - work
+
+  - name: gitea_release
+    image: plugins/gitea-release
+    volumes:
+     - name: cache
+       path: /work/out
+    settings:
+      title: ${DRONE_TAG} Release
+      api_key:
+        from_secret: gitea_token
+      base_url: https://git.neveris.one
+      files: /work/out/*.pdf
+    when:
+      event: tag
+
+volumes:
+- name: cache
+  temp: {}
