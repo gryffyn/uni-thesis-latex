@@ -12,9 +12,14 @@ A (relatively) simple template for marking up a dissertation, thesis, or report.
 
 ## Usage
 
+#### Use repo as template
+Click the `Use this template` button up top.
+
+#### Fork repo
 Fork this repo, then edit accordingly.
 
-Alternatively, create an empty git repository `$MYREPO`, and run
+#### Create new repo
+Create an empty git repository `$MYREPO`, and run
 
 ```bash
 git clone https://git.neveris.one/gryffyn/uni-thesis-latex $MYREPOTITLE
